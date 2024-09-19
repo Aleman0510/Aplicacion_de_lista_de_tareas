@@ -7,7 +7,9 @@
      padding: 25px;
      margin: 10px;
      gap:15px;
-     margin: center 
+     margin: center;
+     position : center  
+
     }
     
     .fondo 
@@ -31,16 +33,23 @@
 
     .label 
     {
-        width: 60%;
+        width: 40%;
         padding: 12px 20px;
         margin: 8px 0;
         display: inline-block;
-        border: 1px solid #ccc;
-        border-radius: 4px;
+        border: 1px solid #000000;
         box-sizing: border-box;
+        border-radius: 10px;
     }
 
     .boton
     {
+        width: 10%;
+        background-color: #4CAF50;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: 1px solid #000000;
+        border-radius: 10px;
+        cursor: pointer;
 
     }
