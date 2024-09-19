@@ -1,0 +1,22 @@
+.texto-header {
+    text-align : center;
+    }
+    
+    .contenedor {
+     display: flex;
+     padding: 25px;
+     margin: 10px;
+     gap:15px;
+     border: 1px solid #000000;
+     background-color : white ;
+     margin: center 
+    }
+    
+    .fondo 
+    {  background-image: url('https://static.vecteezy.com/system/resources/previews/003/335/840/non_2x/white-background-and-wallpaper-by-crumpled-paper-texture-free-photo.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;  
+        background-size: cover;
+    
+    }
+
