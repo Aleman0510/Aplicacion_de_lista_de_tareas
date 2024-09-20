@@ -10,7 +10,7 @@
 <body  class= "fondo">
     <div class= "contenedor">
         <input type="text" class="label" name="textbox">
-        <button class="boton">Enviar</button>
+        <button id= "boton-01" class="boton">Enviar</button>
 
     </div>
     <h2> Lista de tareas</h2>
@@ -19,6 +19,24 @@
 <li>Estudiar para calculo.</li>   
 <li>Hacer la tabla de probabilidad y estadistica. </li>   
 </ul> <br> <br>
+
+
+   
+<script>
+    const botonAgregar = document.getElementById("boton-01");
+        const inputTarea = document.querySelector(".label");
+  
+        botonAgregar.addEventListener("click", () => {
+          const tarea = inputTarea.value;
+          const listaTareas = document.querySelector(".lista-tareas");
+          const nuevaTarea = document.createElement("li"); //<li></li>
+          nuevaTarea.textContent = tarea; //<li> valor del input</li>
+          listaTareas.appendChild(nuevaTarea);
+          inputTarea.value = "";
+      });
+       
+              </script>
+
 </body>
 
 <footer class="footer">
@@ -27,3 +45,4 @@
   <p><b>Grupo:</b> TID31M</p>
 </footer>
 </html>
+
