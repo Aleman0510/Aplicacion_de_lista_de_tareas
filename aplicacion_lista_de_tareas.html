@@ -13,8 +13,8 @@
         <button id= "boton-01" class="boton">Enviar</button>
 
     </div>
-    <h2> Lista de tareas</h2>
-    <ul>
+    <ul class="lista-tareas">
+        <h2> Lista de tareas</h2>
 <li>Terminar pagina web de desarrollo web. </li>   
 <li>Estudiar para calculo.</li>   
 <li>Hacer la tabla de probabilidad y estadistica. </li>   
@@ -24,18 +24,29 @@
    
 <script>
     const botonAgregar = document.getElementById("boton-01");
-        const inputTarea = document.querySelector(".label");
-  
-        botonAgregar.addEventListener("click", () => {
-          const tarea = inputTarea.value;
-          const listaTareas = document.querySelector(".lista-tareas");
-          const nuevaTarea = document.createElement("li"); //<li></li>
-          nuevaTarea.textContent = tarea; //<li> valor del input</li>
-          listaTareas.appendChild(nuevaTarea);
-          inputTarea.value = "";
-      });
-       
-              </script>
+    const inputTarea = document.querySelector(".label");
+    const listaTareas = document.querySelector(".lista-tareas");
+    let contador = listaTareas.getElementsByTagName('li').length; // Cuenta las tareas iniciales
+
+    botonAgregar.addEventListener("click", () => {
+        const tarea = inputTarea.value.trim();
+        if (tarea === "") return; // Evitar agregar tareas vacías
+        
+        const nuevaTarea = document.createElement("li");
+        nuevaTarea.textContent = tarea;
+        contador++;
+
+        // Aplicar el estilo según si es par o impar
+        if (contador % 2 === 0) {
+            nuevaTarea.style.color = "blue"; // Tarea par, color azul
+        } else {
+            nuevaTarea.style.fontWeight = "bold"; // Tarea impar, en negrita
+        }
+
+        listaTareas.appendChild(nuevaTarea);
+        inputTarea.value = ""; // Limpiar el input
+    });
+</script>
 
 </body>
 
