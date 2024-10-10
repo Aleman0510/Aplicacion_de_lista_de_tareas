@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Styles/main.css"/>
+    <title>Tabla</title>
+</head>
+<header><h1 class="texto_header">Tablas</h1></header>
+<body>
+
+  
+<head>
+    <table class="table" id="1">
+        <tr>
+          <th>Equipo</th>
+          <th>Puntuacion</th>
+          <th>Ranking</th>
+          <th>Controles</th>
+        </tr>
+
+        <tr>
+          <td>Alfreds</td>
+          <td>60</td>
+          <td>3</td>
+          <td> <button onclick="moveUp(this)">⬆️</button>
+            <button onclick="moveDown(this)">⬇️</button></td>
+        </tr>
+        
+        <tr>
+          <td>Moctezuma</td>
+          <td>35</td>
+          <td>5</td>
+          <td> <button onclick="moveUp(this)">⬆️</button>
+            <button onclick="moveDown(this)">⬇️</button></td>
+        </tr>
+        <tr>
+          <td>Los pixies</td>
+          <td>100</td>
+          <td>1</td>
+          <td> <button onclick="moveUp(this)">⬆️</button>
+            <button onclick="moveDown(this)">⬇️</button></td>
+        </tr>
+        <tr>
+          <td>Los uruguayos</td>
+          <td>80</td>
+          <td>2</td>
+          <td> <button onclick="moveUp(this)">⬆️</button>
+            <button onclick="moveDown(this)">⬇️</button></td>
+        </tr>
+      </table>
+      
+</head>
+    
+</body>
+
+
+<script>
+    function moveUp(button) {
+        let row = button.parentNode.parentNode;
+        let previousRow = row.previousElementSibling;
+        if (previousRow && previousRow.tagName === 'TR') {
+            row.parentNode.insertBefore(row, previousRow);
+        }
+    }
+
+    function moveDown(button) {
+        let row = button.parentNode.parentNode;
+        let nextRow = row.nextElementSibling;
+        if (nextRow) {
+            row.parentNode.insertBefore(nextRow, row);
+        }
+    }
+</script>
+
+</html>
