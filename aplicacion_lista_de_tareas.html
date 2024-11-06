@@ -5,49 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aplicacion de lista de tareas </title>
-    <h1 class="texto-header">Aplicacion de lista de tareas</h1>
+    <h1 class="texto-header">TO DO LIST</h1>
 </head>
 <body  class= "fondo">
     <div class= "contenedor">
         <input type="text" class="label" name="textbox">
-        <button id= "boton-01" class="boton">Enviar</button>
+        <button id= "boton-01" class="boton">Agregar tarea</button>
 
     </div>
     <ul class="lista-tareas">
         <h2> Lista de tareas</h2>
         <a href ="contacto.html"> Contacto</a> 
-<li>Terminar pagina web de desarrollo web. </li>   
-<li>Estudiar para calculo.</li>   
-<li>Hacer la tabla de probabilidad y estadistica. </li>   
+
 </ul> <br> <br>
 
 
    
-<script>
-    const botonAgregar = document.getElementById("boton-01");
-    const inputTarea = document.querySelector(".label");
-    const listaTareas = document.querySelector(".lista-tareas");
-    let contador = listaTareas.getElementsByTagName('li').length; // Cuenta las tareas iniciales
-
-    botonAgregar.addEventListener("click", () => {
-        const tarea = inputTarea.value.trim();
-        if (tarea === "") return; // Evitar agregar tareas vacías
-        
-        const nuevaTarea = document.createElement("li");
-        nuevaTarea.textContent = tarea;
-        contador++;
-
-        // Aplicar el estilo según si es par o impar
-        if (contador % 2 === 0) {
-            nuevaTarea.style.color = "blue"; // Tarea par, color azul
-        } else {
-            nuevaTarea.style.fontWeight = "bold"; // Tarea impar, en negrita
-        }
-
-        listaTareas.appendChild(nuevaTarea);
-        inputTarea.value = ""; // Limpiar el input
-    });
-</script>
+<script src="lista.js"></script>
 </body>
 
 <footer class="footer">
@@ -56,4 +30,3 @@
   <p><b>Grupo:</b> TID31M</p>
 </footer>
 </html>
-
