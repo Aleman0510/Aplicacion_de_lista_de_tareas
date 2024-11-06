@@ -9,6 +9,11 @@ botonAgregar.addEventListener("click", () => {
     
     const nuevaTarea = document.createElement("li");
 
+    // Crear el checkbox para marcar como terminado
+    const checkboxTarea = document.createElement("input");
+    checkboxTarea.type = "checkbox";
+    checkboxTarea.style.marginRight = "10px"; // Espacio entre checkbox y texto de tarea
+
     // Crear el texto de la tarea
     const textoTarea = document.createElement("span");
     textoTarea.textContent = tarea;
@@ -24,6 +29,17 @@ botonAgregar.addEventListener("click", () => {
         contador--; // Actualizar el contador
     });
 
+    // Evento para marcar la tarea como terminada
+    checkboxTarea.addEventListener("change", () => {
+        if (checkboxTarea.checked) {
+            textoTarea.style.textDecoration = "line-through"; // Tachar el texto
+            textoTarea.style.color = "gray"; // Cambiar color para mostrar que está terminada
+        } else {
+            textoTarea.style.textDecoration = "none"; // Quitar el tachado si se desmarca
+            textoTarea.style.color = contador % 2 === 0 ? "blue" : ""; // Restaurar color original
+        }
+    });
+
     // Añadir estilo según si es par o impar
     contador++;
     if (contador % 2 === 0) {
@@ -32,7 +48,8 @@ botonAgregar.addEventListener("click", () => {
         textoTarea.style.fontWeight = "bold"; // Tarea impar, en negrita
     }
 
-    // Añadir el texto de la tarea y el botón de eliminar al elemento <li>
+    // Añadir el checkbox, el texto de la tarea y el botón de eliminar al elemento <li>
+    nuevaTarea.appendChild(checkboxTarea);
     nuevaTarea.appendChild(textoTarea);
     nuevaTarea.appendChild(botonEliminar);
 
